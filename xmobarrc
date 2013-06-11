@@ -1,0 +1,61 @@
+-- xmobar config used by Vic Fryzel
+-- Author: Vic Fryzel
+-- http://github.com/vicfryzel/xmonad-config
+
+-- This is setup for dual 1920x1080 monitors, with the right monitor as primary
+-- position = Static { xpos = 1920, ypos = 0, width = 1800, height = 16 },
+Config {
+    -- keep both of these because the font size does not seem to be stable
+    font = "xft:Fixed-10:bold:antialias=false",
+    --font = "xft:Bitstream Vera Sans Mono:size=12:bold:antialias=true:hinting=true",
+    --font = "xft:DejaVu Sans Mono:size=12:bold:antialias=true:hinting=true",
+    --font = "xft:Fixed:size=12:bold:antialias=1:hinting=1:hintstyle=hintfull:rgba=rgb",
+    --font = "xft:Fixed-14:bold:antialias=false",
+    --font = "xft:Fixed-12:bold:antialias=false",
+    --font = "xft:inconsolata-10:bold:antialias=false",
+    --font = "xft:inconsolata-12:bold:antialias=false",
+    --font = "xft:Fixed-10:bold:antialias=false",
+    --font = "xft:Fixed-8:bold:antialias=false",
+    --font = "xft:Fixed-8:bold:antialias=false",
+    bgColor = "#000000",
+    --bgColor = "#111111",
+    fgColor = "#ffffff",
+--    position = TopW L 90,
+    --position = Static { xpos = 0, ypos = 0, width = 3000, height = 24 },
+    --position = Static { xpos = 0, ypos = 0, width = 1920, height = 18 },
+    position = Static { xpos = 0, ypos = 0, width = 1280, height = 18 },
+    lowerOnStart = True,
+    commands = [
+        ----http://weather.noaa.gov/weather/current/NZWN.html
+        ----http://weather.noaa.gov/weather/current/NZCH.html
+        ----Wellington
+        --Run Weather "NZWN" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
+        ----Christchurch
+        Run Weather "NZCH" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
+        ----Dunedin
+        --Run Weather "NZDN" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
+        ----Port Vila
+        ----Run Weather "NVVV" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
+        ----Perth
+        --Run Weather "APPH" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
+        --Run MultiCpu ["-t","cpu: <total0> <total1>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
+        Run MultiCpu ["-t","cpu: <total0>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
+        --Run MultiCpu ["-t","cpu: <total0> <total1> <total2> <total3>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
+        Run Memory ["-t","mem: <usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Swap ["-t","swap: <usedratio>","-H","1024","-L","512","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        --Run Network "eth1" ["-t","Net: <rx>, <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Network "br0" ["-t","br: <rx> <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Network "bond0" ["-t","bd: <rx> <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Network "eth0" ["-t","0: <rx> <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Network "eth1" ["-t","1: <rx> <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Network "eth2" ["-t","2: <rx> <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Network "eth3" ["-t","3: <rx> <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
+        Run Date "%a %b %_d %l:%M" "date" 10,
+        Run StdinReader
+    ],
+    sepChar = "%",
+    alignSep = "}{",
+    --template = "%StdinReader% }{ %multicpu%   %memory%   %swap%   %eth0%   <fc=#FFFFCC>%date%</fc>   %APPH%   %NVVV%   %NZDN%"
+    --template = " %StdinReader% }{ %multicpu%   %memory%   %swap%   %eth0%   <fc=#FFFFCC>%date%</fc> "
+    template = " %StdinReader% }{ %multicpu%   %memory%   %swap%   %bond0%   %br0%   %eth0%   %eth1%   %eth2%   %eth3%   %NZCH%   <fc=#FFFFCC>%date%</fc> "
+}
