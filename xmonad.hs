@@ -325,6 +325,7 @@ myManageHook = composeAll
     , resource  =? "feh"            --> doFloat
     , resource  =? "xclock"         --> doFloat
     , resource  =? "Xephyr"         --> doFloat
+    , resource  =? "screenruler"         --> doFloat
     , resource  =? "gnome-panel"    --> doIgnore
     , resource  =? "kicker"         --> doIgnore
     , resource  =? "desktop_window" --> doIgnore
