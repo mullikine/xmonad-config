@@ -15,7 +15,7 @@ import XMonad.Actions.CopyWindow
 import XMonad.Actions.GridSelect
 import XMonad.Actions.FloatSnap
 import XMonad.Actions.CycleWS
---import XMonad.Actions.Run
+import XMonad.Util.Run
 --import XMonad.Layout.NoBorders
 import XMonad.Hooks.FadeInactive
 import XMonad.Layout.Spacing
@@ -29,6 +29,9 @@ import Control.Monad
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
+myXmonadBar = "dzen2 -x '1440' -y '0' -h '24' -w '640' -ta 'l' -fg '#FFFFFF' -bg '#1B1D1E'"
+myStatusBar = "conky -c /home/shane/.xmonad/.conky_dzen | dzen2 -x '2080' -w '1040' -h '24' -ta 'r' -bg '#1B1D1E' -fg '#FFFFFF' -y '0'"
+myBitmapsDir = "/home/shane/.xmonad/dzen2"
 
 quitWithWarning :: X ()
 quitWithWarning = do
@@ -325,10 +328,11 @@ myManageHook = composeAll
     , resource  =? "feh"            --> doFloat
     , resource  =? "xclock"         --> doFloat
     , resource  =? "Xephyr"         --> doFloat
-    , resource  =? "screenruler"         --> doFloat
+    , resource  =? "screenruler"    --> doFloat
     , resource  =? "gnome-panel"    --> doIgnore
     , resource  =? "kicker"         --> doIgnore
     , resource  =? "desktop_window" --> doIgnore
+    , resource  =? "firefox"        --> doShift "1"
     , resource  =? "kdesktop"       --> doIgnore ]
 
 ------------------------------------------------------------------------
@@ -379,12 +383,31 @@ myStartupHook = return ()
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 
 -- Command to launch the bar.
-myBar = "xmobar"
+--myBar = "xmobar"
+myBar = "dzen2"
 
 -- Custom PP, configure it as you like. It determines what is being written to the bar.
 --CEFFAC -- light yellow
 --429942 -- leaf green
-myPP = xmobarPP { ppCurrent = xmobarColor "#EE0000" "" }
+myPP = xmobarPP {
+        ppCurrent           =   dzenColor "#ebac54" "#1B1D1E" . pad
+      , ppVisible           =   dzenColor "white" "#1B1D1E" . pad
+      , ppHidden            =   dzenColor "white" "#1B1D1E" . pad
+      , ppHiddenNoWindows   =   dzenColor "#7b7b7b" "#1B1D1E" . pad
+      , ppUrgent            =   dzenColor "#ff0000" "#1B1D1E" . pad
+      , ppWsSep             =   " "
+      , ppSep               =   "  |  "
+      , ppLayout            =   dzenColor "#ebac54" "#1B1D1E" .
+                                (\x -> case x of
+                                    "ResizableTall"             ->      "^i(" ++ myBitmapsDir ++ "/tall.xbm)"
+                                    "Mirror ResizableTall"      ->      "^i(" ++ myBitmapsDir ++ "/mtall.xbm)"
+                                    "Full"                      ->      "^i(" ++ myBitmapsDir ++ "/full.xbm)"
+                                    "Simple Float"              ->      "~"
+                                    _                           ->      x
+                                )
+      , ppTitle             =   (" " ++) . dzenColor "white" "#1B1D1E" . dzenEscape
+      , ppOutput            =   hPutStrLn h
+    }
 --myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
 
 -- Key binding to toggle the gap for the bar.
@@ -417,5 +440,6 @@ defaults = defaultConfig {
         manageHook         = myManageHook,
         handleEventHook    = myEventHook,
         logHook            = myLogHook,
+        --logHook             = myLogHook dzenTopBar >> fadeInactiveLogHook 0xdddddddd  >> setWMName "LG3D",
         startupHook        = myStartupHook
     }
