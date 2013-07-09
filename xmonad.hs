@@ -320,16 +320,17 @@ myLayout = tiled ||| Full
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , resource  =? "feh"            --> doFloat
-    , resource  =? "xclock"         --> doFloat
-    , resource  =? "Xephyr"         --> doFloat
-    , resource  =? "screenruler"         --> doFloat
-    , resource  =? "gnome-panel"    --> doIgnore
-    , resource  =? "kicker"         --> doIgnore
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    [ className =? "MPlayer"                    --> doFloat
+    , className =? "Gimp"                       --> doFloat
+    , resource  =? "feh"                        --> doFloat
+    , resource  =? "sun-awt-X11-XFramePeer"     --> doFloat
+    , resource  =? "xclock"                     --> doFloat
+    , resource  =? "Xephyr"                     --> doFloat
+    , resource  =? "screenruler"                --> doFloat
+    , resource  =? "gnome-panel"                --> doIgnore
+    , resource  =? "kicker"                     --> doIgnore
+    , resource  =? "desktop_window"             --> doIgnore
+    , resource  =? "kdesktop"                   --> doIgnore ]
 
 ------------------------------------------------------------------------
 -- Event handling
