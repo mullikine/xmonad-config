@@ -406,7 +406,6 @@ myPP = xmobarPP {
                                     _                           ->      x
                                 )
       , ppTitle             =   (" " ++) . dzenColor "white" "#1B1D1E" . dzenEscape
-      , ppOutput            =   hPutStrLn h
     }
 --myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "<" ">" }
 
