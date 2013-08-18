@@ -22,20 +22,16 @@ quitWithWarning = do
     when (m == s) (io exitSuccess)
 
 myTerminal      = "/home/shane/local/bin/xterm -ls -js +l"
-
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = True
-
 myBorderWidth   = 0
 myModMask       = mod4Mask
 myNumlockMask   = mod2Mask
 myWorkspaces    = ["1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 "]
-
 myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#442244"
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
-
     [((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
