@@ -138,12 +138,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch dark xterm tmux localhost
     --, ((modm,               xK_u     ), spawn "xterm -ls -e \"(sleep 1;resize &> /dev/null;notify-send resize)& TERM=xterm-256color tmux attach -t localhost\"")
-    , ((modm,               xK_u     ), spawn "xterm -ls -e \"resize &> /dev/null; TERM=xterm-256color tmux attach -t localhost\"")
+    , ((modm,               xK_u     ), spawn "xterm -ls -e \"resize &> /dev/null; sleep 0.1; TERM=xterm-256color tmux attach -t localhost\"")
 
     ---- launch bright xterm tmux localhost
     --, ((modm,               xK_i     ), spawn "xterm -ls -rv -e \"resize &> /dev/null; TERM=vt220 tmux attach -t localhost\"")
     -- launch bright xterm tmux localhost
-    , ((modm,               xK_i     ), spawn "bash -c \"set -x; set -m; xterm -ls -e \\\"resize &> /dev/null; TERM=xterm-256color tmux attach -t localhost\\\"& PIDX=\\$!; sleep 0.1; xprop -id \\$(/home/shane/local/bin/getwid.sh \\$PIDX) -f WM_CLASS 8s -set WM_CLASS 'xtermi';\"")
+    , ((modm,               xK_i     ), spawn "bash -c \"set -x; set -m; xterm -ls -e \\\"resize &> /dev/null; sleep 0.1; TERM=xterm-256color tmux attach -t localhost\\\"& PIDX=\\$!; sleep 0.1; xprop -id \\$(/home/shane/local/bin/getwid.sh \\$PIDX) -f WM_CLASS 8s -set WM_CLASS 'xtermi';\"")
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
