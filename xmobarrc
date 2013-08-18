@@ -23,7 +23,7 @@ Config {
 --    position = TopW L 90,
     --position = Static { xpos = 0, ypos = 0, width = 3000, height = 24 },
     --position = Static { xpos = 0, ypos = 0, width = 1920, height = 18 },
-    position = Static { xpos = 0, ypos = 0, width = 1280, height = 18 },
+    position = Static { xpos = 0, ypos = 0, width = 1280, height = 24 },
     lowerOnStart = True,
     commands = [
         ----http://weather.noaa.gov/weather/current/NZWN.html
