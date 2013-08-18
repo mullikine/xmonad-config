@@ -12,7 +12,6 @@ Config {
     position = Static { xpos = 0, ypos = 0, width = 1280, height = 24 },
     lowerOnStart = True,
     commands = [
-        Run Weather "NZCH" ["-t","<tempC>C <skyCondition>","-L","64","-H","77","-n","#CEFFAC","-h","#FFB6B0","-l","#96CBFE"] 36000,
         Run MultiCpu ["-t","cpu: <total0> <total1> <total2> <total3>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3"] 10,
         Run Memory ["-t","mem: <usedratio>%","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
         Run Network "eth0" ["-t","0: <rx> <tx>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC"] 10,
@@ -23,5 +22,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = " %StdinReader% }{ %multicpu%   %memory%   %eth0%   %eth1%   %vboxnet0%   %NZCH%   <fc=#FFFFCC>%date%</fc> "
+    template = " %StdinReader% }{ %multicpu%   %memory%   %eth0%   %eth1%   %vboxnet0%   <fc=#FFFFCC>%date%</fc> "
 }
