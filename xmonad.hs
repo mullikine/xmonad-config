@@ -133,7 +133,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- this font doesn't work in xdmx it seems
     --, ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu -fn '-adobe-helvetica-*-r-*-*-18-*-*-*-*-*-*-*'` && eval \"exec $exe\"")
     --, ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu -fn '-*-fixed-*-r-*-*-18-*-*-*-*-*-*-*'` && eval \"exec $exe\"")
-    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu -fn '-*-fixed-*-r-*-*-18-*-*-*-*-*-*-*'` && eval \"exec $exe\"")
+    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu -fn '-*-fixed-*-r-*-*-20-*-*-*-*-*-*-*'` && eval \"exec $exe\"")
     --, ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
 
     -- launch dark xterm tmux localhost
