@@ -6,6 +6,7 @@ import XMonad.Actions.CopyWindow
 import XMonad.Actions.GridSelect
 import XMonad.Actions.FloatSnap
 import XMonad.Actions.CycleWS
+import XMonad.Actions.CycleWindows
 import XMonad.Hooks.FadeInactive
 import XMonad.Layout.Spacing
 import XMonad.Util.Dmenu

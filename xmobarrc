@@ -18,9 +18,10 @@ Config {
         Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Network "vboxnet0" ["-t","vboxnet down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
+        Run Battery ["-t","[ <left> %  <watts> W  <timeleft> T ]"] 10,
         Run StdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %vboxnet0%  <fc=#CEFFAC>%date%</fc> "
+    template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %vboxnet0%  %battery%  <fc=#CEFFAC>%date%</fc> "
 }
