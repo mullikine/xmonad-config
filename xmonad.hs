@@ -126,7 +126,8 @@ myStartupHook = return ()
 
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 myBar = "xmobar"
-myPP = xmobarPP { ppCurrent = xmobarColor "#CEFFAC" "" }
+myPP = xmobarPP { ppCurrent = xmobarColor "#CEFFAC" ""
+                , ppOrder   = \(ws:_:t:_)   -> [ws,t] }
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 defaults = defaultConfig {
