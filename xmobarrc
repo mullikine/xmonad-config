@@ -6,7 +6,7 @@
 -- position = Static { xpos = 1920, ypos = 0, width = 1800, height = 16 },
 Config {
     -- keep both of these because the font size does not seem to be stable
-    font = "xft:Fixed-12:bold:antialias=false",
+    font = "xft:Bitstream Vera Sans Mono:size=12:bold:antialias=true"
     bgColor = "#000000",
     fgColor = "#669966",
     position = Static { xpos = 0, ypos = 0, width = 1280, height = 24 },
