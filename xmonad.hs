@@ -27,7 +27,7 @@ myFocusFollowsMouse = True
 myBorderWidth   = 0
 myModMask       = mod4Mask
 myNumlockMask   = mod2Mask
-myWorkspaces    = ["1 ","2 ","3 ","4 ","5 ","6 ","7 ","8 ","9 "]
+myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#442244"
 
