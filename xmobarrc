@@ -16,11 +16,11 @@ Config {
         Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
-        Run Network "vboxnet0" ["-t","vboxnet down <rxbar> up<txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
+        Run Network "vboxnet0" ["-t","vboxnet down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
         Run StdinReader
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = " %StdinReader% }{ %multicpu%   %memory%   %eth0%   %eth1%   %vboxnet0%   <fc=#FFFFCC>%date%</fc> "
+    template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %vboxnet0%  <fc=#FFFFCC>%date%</fc> "
 }
