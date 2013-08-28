@@ -16,6 +16,7 @@ Config {
         Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
+        Run Network "eth2" ["-t","iphone down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Network "vboxnet0" ["-t","vboxnet down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
         Run Battery ["-t","<leftbar> <timeleft>","-h","#CEFFAC","-l","#FF5050","-n","#FFFFCC","-W","5"] 10,
@@ -23,5 +24,5 @@ Config {
     ],
     sepChar = "%",
     alignSep = "}{",
-    template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %vboxnet0%  %battery%  <fc=#CEFFAC>%date%</fc> "
+    template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %eth2%  %vboxnet0%  %battery%  <fc=#CEFFAC>%date%</fc> "
 }
