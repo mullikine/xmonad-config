@@ -9,6 +9,7 @@ import XMonad.Actions.CycleWS
 import XMonad.Actions.CycleWindows
 import XMonad.Hooks.FadeInactive
 import XMonad.Layout.Spacing
+import XMonad.Layout.SimpleDecoration
 import XMonad.Util.Dmenu
 import XMonad.Actions.WindowBringer
 import XMonad.Actions.UpdatePointer
@@ -97,9 +98,11 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
                                        >> windows W.shiftMaster))
     ]
 
-myLayout = spacing 10 ( tiled ) ||| spacing 0 ( Full )
+myLayout = tiled ||| full
   where
-     tiled   = Tall nmaster delta ratio
+     --simple  = simpleDeco shrinkText defaultTheme (layoutHook defaultConfig)
+     tiled   = simpleDeco shrinkText myTheme $ spacing 10 $ Tall nmaster delta ratio
+     full    = spacing 0 ( Full )
      nmaster = 1
      ratio   = 1/2
      delta   = 10/100
@@ -149,3 +152,14 @@ defaults = defaultConfig {
         logHook            = myLogHook,
         startupHook        = myStartupHook
     }
+
+myTheme = defaultTheme { activeColor         = "#000000"
+                       , inactiveColor       = "#000000"
+                       , activeBorderColor   = "#000000"
+                       , inactiveBorderColor = "#000000"
+                       , activeTextColor     = "#CEFFAC"
+                       , inactiveTextColor   = "#669966"
+                       , decoHeight          = 24
+                       , decoWidth           = 300
+                       , fontName            = "-*-fixed-*-r-*-*-18-*-*-*-*-*-*-*"
+                       }
