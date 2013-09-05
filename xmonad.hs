@@ -114,6 +114,7 @@ myManageHook = composeAll
     , resource  =? "xclock"                     --> doFloat
     , resource  =? "Xephyr"                     --> doFloat
     , resource  =? "screenruler"                --> doFloat
+    , resource  =? "sun-awt-X11-XFramePeer"     --> doFloat
     , resource  =? "gnome-panel"                --> doIgnore
     , resource  =? "kicker"                     --> doIgnore
     , resource  =? "desktop_window"             --> doIgnore
