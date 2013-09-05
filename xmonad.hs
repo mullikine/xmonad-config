@@ -161,6 +161,6 @@ myTheme = defaultTheme { activeColor         = "#000000"
                        , activeTextColor     = "#CEFFAC"
                        , inactiveTextColor   = "#669966"
                        , decoHeight          = 24
-                       , decoWidth           = 300
+                       , decoWidth           = 400
                        , fontName            = "-*-fixed-*-r-*-*-18-*-*-*-*-*-*-*"
                        }
