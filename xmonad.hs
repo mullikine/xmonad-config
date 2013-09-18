@@ -3,10 +3,10 @@ import XMonad.Hooks.DynamicLog
 import Data.Monoid
 import System.Exit
 import XMonad.Actions.CopyWindow
+import XMonad.Actions.RotSlaves
 import XMonad.Actions.GridSelect
 import XMonad.Actions.FloatSnap
 import XMonad.Actions.CycleWS
-import XMonad.Actions.CycleWindows
 import XMonad.Hooks.FadeInactive
 import XMonad.Layout.Spacing
 import XMonad.Layout.SimpleDecoration
@@ -88,8 +88,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_a),  shiftPrevScreen)
     , ((modm,               xK_z),  toggleWS)
   , ((modm, xK_v ), windows copyToAll)
-  , ((modm .|. controlMask, xK_i), rotFocusedUp)
-  , ((modm .|. controlMask, xK_u), rotFocusedDown)
+  , ((modm .|. controlMask, xK_u), rotAllUp)
+  , ((modm .|. controlMask, xK_i), rotAllDown)
     ]
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
