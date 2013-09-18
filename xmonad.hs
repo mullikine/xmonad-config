@@ -103,7 +103,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout = tiled ||| full
   where
      --simple  = simpleDeco shrinkText defaultTheme (layoutHook defaultConfig)
-     tiled   = simpleDeco shrinkText myTheme $ spacing 10 $ Tall nmaster delta ratio
+     tiled   = simpleDeco shrinkText myTheme $ spacing 5 $ Tall nmaster delta ratio
      full    = spacing 0 ( Full )
      nmaster = 1
      ratio   = 1/2
