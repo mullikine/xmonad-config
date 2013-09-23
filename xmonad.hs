@@ -88,8 +88,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_a),  shiftPrevScreen)
     , ((modm,               xK_z),  toggleWS)
   , ((modm, xK_v ), windows copyToAll)
-  , ((modm .|. controlMask, xK_u), rotAllUp)
-  , ((modm .|. controlMask, xK_i), rotAllDown)
+  , ((modm .|. controlMask, xK_i), rotAllUp)
+  , ((modm .|. controlMask, xK_u), rotAllDown)
     ]
 
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
