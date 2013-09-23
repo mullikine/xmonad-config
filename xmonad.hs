@@ -162,7 +162,7 @@ myTheme = defaultTheme { activeColor         = "#000000"
                        , inactiveBorderColor = "#000000"
                        , activeTextColor     = "#CEFFAC"
                        , inactiveTextColor   = "#669966"
-                       , decoHeight          = 24
+                       , decoHeight          = 16
                        , decoWidth           = 10000
-                       , fontName            = "-*-fixed-*-r-*-*-18-*-*-*-*-*-*-*"
+                       , fontName            = "-*-fixed-*-r-*-*-12-*-*-*-*-*-*-*"
                        }
