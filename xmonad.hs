@@ -25,7 +25,7 @@ quitWithWarning = do
 
 myTerminal      = "/home/shane/local/bin/xterm -ls -js +l"
 myFocusFollowsMouse :: Bool
-myFocusFollowsMouse = True
+myFocusFollowsMouse = False
 myBorderWidth   = 0
 myModMask       = mod4Mask
 myNumlockMask   = mod2Mask
@@ -126,7 +126,6 @@ myEventHook = mempty
 
 myLogHook :: X ()
 myLogHook = fadeInactiveLogHook fadeAmount
-            >> updatePointer (Relative 0.95 0.95)
     where fadeAmount = 1.00
 
 myStartupHook = return ()
