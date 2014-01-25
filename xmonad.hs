@@ -45,9 +45,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     ++
 
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
-    , ((modm,               xK_p     ), spawn "exe=`dmenu_path | dmenu -fn '-*-fixed-*-r-*-*-20-*-*-*-*-*-*-*'` && eval \"exec $exe\"")
-    , ((modm,               xK_u     ), spawn "xterm -ls -e \"resize &> /dev/null; sleep 0.1; TERM=xterm-256color tmux attach -t localhost\"")
-    , ((modm,               xK_i     ), spawn "bash -c \"set -x; set -m; xterm -ls -e \\\"resize &> /dev/null; sleep 0.1; TERM=xterm-256color tmux attach -t localhost\\\"& PIDX=\\$!; sleep 0.1; xprop -id \\$(/home/shane/local/bin/getwid.sh \\$PIDX) -f WM_CLASS 8s -set WM_CLASS 'xtermi';\"")
+    , ((modm,               xK_p     ), spawn "xmonad-tmux-dmenu.sh")
+    , ((modm,               xK_u     ), spawn "xmonad-tmux-localhost.sh")
+    , ((modm,               xK_i     ), spawn "xmonad-tmux-localhost-inv.sh")
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
     , ((modm .|. shiftMask, xK_c     ), kill)
     , ((modm,               xK_space ), sendMessage NextLayout)
