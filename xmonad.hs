@@ -110,8 +110,12 @@ myLayout = tiled ||| full
      delta   = 10/100
 
 myManageHook = composeAll
-    [ className =? "MPlayer"                    --> doFloat
+    [ className =? "Software Updated"           --> doFloat
+    , className =? "MPlayer"                    --> doFloat
     , className =? "Gimp"                       --> doFloat
+    , className =? "Firefox"                    --> doShift "2"
+    , className =? "Eclipse"                    --> doShift "3"
+    , resource  =? "eclipse"                    --> doShift "3"
     , resource  =? "feh"                        --> doFloat
     , resource  =? "xclock"                     --> doFloat
     , resource  =? "Xephyr"                     --> doFloat
