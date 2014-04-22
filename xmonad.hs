@@ -66,6 +66,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_comma ), sendMessage (IncMasterN 1))
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
     , ((modm .|. shiftMask, xK_q     ), quitWithWarning)
+    , ((modm .|. shiftMask, xK_x     ), quitWithWarning)
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     , ((modm, xK_f),  gotoMenu)
     , ((modm .|. shiftMask, xK_b),  bringMenu)
