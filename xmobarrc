@@ -2,25 +2,54 @@
 -- Author: Vic Fryzel
 -- http://github.com/vicfryzel/xmonad-config
 
+-- To prevent the bars from growing and shrinking, add more characters.
+-- 
+-- The bars use a logarithmic scale, dumped by the high threshold (-H),
+-- which should be set to about your maximum bandwidth.  That means that
+-- very short bars behave poorly, and that each new notch in the bar
+-- means a ten fold increase in the rate.
+--
 -- This is setup for dual 1920x1080 monitors, with the right monitor as primary
 -- position = Static { xpos = 1920, ypos = 0, width = 1800, height = 16 },
 Config {
     -- keep both of these because the font size does not seem to be stable
     font = "xft:Bitstream Vera Sans Mono:size=10:bold:antialias=true"
-    bgColor = "#000000",
-    fgColor = "#669966",
-    position = Static { xpos = 0, ypos = 0, width = 1280, height = 24 },
+    --fgColor = "#ff4400",
+    --bgColor = "#ff4400",
+    bgColor = "#AA1133",
+    --fgColor = "#669966",
+    fgColor = "#ff6666",
+    --position = Static { xpos = 0, ypos = 0, width = 1920, height = 24 },
+    position = Static { xpos = 0, ypos = 0, width = 2560, height = 48 },
     lowerOnStart = True,
     commands = [
-        Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3","-W","5"] 10,
-        Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
-        Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
-        Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","200","-L","10","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
+        Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3>","-L","30","-H","60","-h","#ff6666","-l","#ff6666","-n","#ff6666","-w","3","-W","4"] 10,
+        Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","5"] 10,
+        Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
+        Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
+        Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
+        -- iphone USB doesn't get detected for some reason
+        --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
+        --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
-        Run Battery ["-t","<leftbar> <timeleft>","-h","#CEFFAC","-l","#FF5050","-n","#FFFFCC","-W","5"] 10,
+        Run Battery ["-t","<leftbar> <timeleft>","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","5"] 10,
         Run StdinReader
     ],
+    --commands = [
+    --    Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3>","-L","30","-H","60","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-w","3","-W","4"] 10,
+    --    Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#FFB6B0","-l","#CEFFAC","-n","#FFFFCC","-W","5"] 10,
+    --    Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#B6FF80","-l","#CEFFAC","-n","#FFFFCC","-W","9"] 10,
+    --    Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#B6FF80","-l","#CEFFAC","-n","#FFFFCC","-W","9"] 10,
+    --    Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#B6FF80","-l","#CEFFAC","-n","#FFFFCC","-W","9"] 10,
+    --    -- iphone USB doesn't get detected for some reason
+    --    --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#B6FF80","-l","#CEFFAC","-n","#FFFFCC","-W","9"] 10,
+    --    --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#B6FF80","-l","#CEFFAC","-n","#FFFFCC","-W","9"] 10,
+    --    Run Date "%a %b %_d %l:%M" "date" 10,
+    --    Run Battery ["-t","<leftbar> <timeleft>","-h","#CEFFAC","-l","#FF5050","-n","#FFFFCC","-W","5"] 10,
+    --    Run StdinReader
+    --],
     sepChar = "%",
     alignSep = "}{",
-    template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %battery%  <fc=#CEFFAC>%date%</fc> "
+    template = " %StdinReader% }{ %multicpu%  %memory%%eth0%  %eth1%  %battery%  <fc=#ff6666>%date%</fc> "
+    --template = " %StdinReader% }{ %multicpu%  %memory%%eth0%  %eth1%  %battery%  <fc=#CEFFAC>%date%</fc> "
 }
