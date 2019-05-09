@@ -84,22 +84,18 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     ++
     [
     --((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
-    --((modm .|. shiftMask, xK_Return), spawn  "win xterm")
-    ((modm .|. shiftMask, xK_Return), spawn  "xt -b sh-xt")
+    ((modm .|. shiftMask, xK_Return), spawn  "win xterm")
     , ((modm,               xK_p     ), spawn "win rotate")
     , ((modm,               xK_p     ), spawn "win dmenu")
     , ((modm .|. shiftMask, xK_f     ), spawn "win ffdmenu")
     , ((modm,               xK_n     ), spawn "win nvim-tmux")
-    , ((modm,               xK_u     ), spawn "win xterm-tmux -b")
-    , ((modm .|. mod1Mask,  xK_u     ), spawn "win xterm-tmux")
-    , ((modm .|. mod1Mask .|. shiftMask, xK_u ), spawn "win xterm-tmux -h")
+    , ((modm,               xK_u     ), spawn "win xterm-tmux")
     , ((modm .|. shiftMask, xK_u     ), spawn "win vt100-tmux")
     , ((modm,               xK_i     ), spawn "win xterm-inv")
     , ((modm .|. shiftMask, xK_i     ), spawn "win vt100-inv")
     , ((modm .|. shiftMask, xK_m     ), spawn "win mail")
     , ((modm,               xK_slash ), spawn "win browser")
     , ((modm .|. shiftMask, xK_g     ), spawn "win control-center")
-    , ((modm .|. mod1Mask,  xK_g     ), spawn "killall import")
     , ((modm .|. shiftMask, xK_l     ), spawn "win calculator")
     , ((0, xF86XK_Calculator), spawn "win calculator")
     , ((modm .|. controlMask, xK_a     ), spawn "win mixer")
@@ -109,7 +105,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_c     ), kill)
     , ((modm .|. shiftMask, xK_h     ), spawn "win screenshot screen &")
     , ((modm .|. controlMask, xK_h   ), spawn "win screenshot root &")
-    , ((modm .|. mod1Mask, xK_w     ), spawn "win capture-text screen &")
     , ((modm,               xK_space ), sendMessage NextLayout)
     , ((modm .|. controlMask, xK_space ), spawn "op stop-lag")
     , ((modm .|. shiftMask, xK_q     ), spawn "op suspend")
@@ -240,8 +235,6 @@ myManageHook = composeAll
     , className =? "google-chrome"              --> viewShift "2"
     , className =? "Chrome"                     --> viewShift "2"
     , className =? "Firefox"                    --> doShift "2"
-    , className =? "qutebrowser"                    --> doShift "2"
-    , className =? "Navigator"                    --> doShift "2"
     --, className =? "Firefox"                    --> viewShift "2"
     , className =? "Zathura"                    --> viewShift "5"
     , className =? "hl2_linux"                  --> viewShift "6"
@@ -254,7 +247,6 @@ myManageHook = composeAll
     , resource =? "010Editor.exe"               --> viewShift "6"
     , resource =? "SmoothDraw4.exe"             --> doFloat
     , resource =? "Launcher.exe"                --> viewShift "6"
-    , resource =? "Shareaza.exe"                --> viewShift "9"
     , resource =? "SC2.exe"                     --> viewShift "6"
     , resource =? "expleror.exe"                --> viewShift "8"
     , resource =? "idaq.exe"                    --> doShift "8"
@@ -269,8 +261,7 @@ myManageHook = composeAll
     , resource  =? "PCSX"                       --> unfloat <+> viewShift "6"
     , resource  =? "gtk-gnutella"               --> doShift "5"
     , title     =? "COMMANCHE - Wine desktop"   --> doFloat <+> viewShift "6"
-    , title     =? "ONI - Wine desktop"         --> doShift "6"
-    , className =? "Meld"                       --> viewShift "3"
+    , title     =? "ONI - Wine desktop"        --> doShift "6"
     , title     =? "AOHD - Wine desktop"        --> doShift "6"
     , title     =? "AOC - Wine desktop"         --> doShift "6"
     , title     =? "AOE - Wine desktop"         --> doShift "6"
@@ -294,21 +285,16 @@ myManageHook = composeAll
     -- COMMANCHE OR AOHD
     --, resource  =? "explorer.exe"               --> doShift "7"
     , resource  =? "Steam.exe"                  --> doShift "8"
-    , resource  =? "Code"                       --> doShift "3"
     , resource  =? "CDisplayEx.exe"             --> unfloat <+> viewShift "5"
     , resource  =? "Battle.net.exe"             --> viewShift "8"
     , className =? "ePSXe - Enhanced PSX emulator" --> unfloat <+> doShift "6"
     , className =? "Eclipse"                    --> viewShift "9"
     , resource  =? "XMathematica"               --> doFloat <+> doShift "9"
-    , resource  =? "display"               --> unfloat
     , className =? "VirtualBox"                 --> doShift "3"
-    , className =? "VirtualBox Manager"                 --> doShift "3"
     --, className =? "MPlayer"                    --> doFloat
     -- when using gimp in single window mode, we want it to be tiled.
     -- actually, gimp goes insane when tiled
     , className =? "Gimp"                       --> doFloat <+> viewShift "7"
-    , className =? "drracket"                   --> unfloat <+> viewShift "3"
-    , className =? "DrRacket"                   --> unfloat <+> viewShift "3"
     , className =? "Denemo"                     --> doFloat
     --, resource  =? "feh"                        --> doFloat
     , resource  =? "xclock"                     --> doFloat
