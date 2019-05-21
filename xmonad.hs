@@ -58,10 +58,13 @@ quitWithWarning = do
     when (m == s) (io exitSuccess)
 
 myTerminal      = "/usr/bin/xterm"
+
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
+
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
+
 myBorderWidth   = 0
 myModMask       = mod4Mask
 myNumlockMask   = mod2Mask
