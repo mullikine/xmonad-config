@@ -19,9 +19,13 @@ Config {
     --bgColor = "#ff4400",
     --fgColor = "#669966",
 
-    -- nice red
-    bgColor = "#AA1133",
-    fgColor = "#ff6666",
+    -- -- nice red
+    -- bgColor = "#AA1133",
+    -- fgColor = "#ff6666",
+
+    -- dark grey
+    bgColor = "#111111",
+    fgColor = "#222222",
 
     -- -- awful green
     -- bgColor = "#33AA11",
@@ -35,17 +39,23 @@ Config {
     --position = Static { xpos = 0, ypos = 0, width = 2560, height = 44 },
     lowerOnStart = True,
     commands = [
-        Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3> <bar4> <bar5> <bar6> <bar7>","-L","30","-H","60","-h","#ff6666","-l","#ff6666","-n","#ff6666","-w","3","-W","4"] 10,
-        Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","5"] 10,
-        Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        Run Network "wlp3s0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
+        -- red
+        -- ff6666
+
+        -- dark grey
+        -- 333333
+
+        Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3> <bar4> <bar5> <bar6> <bar7>","-L","30","-H","60","-h","#222222","-l","#222222","-n","#222222","-w","3","-W","4"] 10,
+        Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#222222","-l","#222222","-n","#222222","-W","5"] 10,
+        Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#222222","-l","#222222","-n","#222222","-W","9"] 10,
+        Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#222222","-l","#222222","-n","#222222","-W","9"] 10,
+        Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#222222","-l","#222222","-n","#222222","-W","9"] 10,
+        Run Network "wlp3s0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#222222","-l","#222222","-n","#222222","-W","9"] 10,
         -- iphone USB doesn't get detected for some reason
-        --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
+        --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#222222","-l","#222222","-n","#222222","-W","9"] 10,
+        --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#222222","-l","#222222","-n","#222222","-W","9"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
-        Run Battery ["-t","<leftbar> <timeleft>","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","5"] 10,
+        Run Battery ["-t","<leftbar> <timeleft>","-h","#222222","-l","#222222","-n","#222222","-W","5"] 10,
         Run StdinReader
     ],
     --commands = [
@@ -63,6 +73,6 @@ Config {
     --],
     sepChar = "%",
     alignSep = "}{",
-    template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#ff6666>%date%</fc> "
+    template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#222222>%date%</fc> "
     --template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#CEFFAC>%date%</fc> "
 }

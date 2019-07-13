@@ -338,9 +338,17 @@ myStartupHook = execScriptHook "startup"
 
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 myBar = "xmobar"
-myPP = xmobarPP { ppCurrent = xmobarColor "#ff9999" ""
+-- red
+-- ppCurrent ff9999
+-- ppTitle ff6666
+
+-- dark grey
+-- ppCurrent 333333
+-- ppTitle 222222
+
+myPP = xmobarPP { ppCurrent = xmobarColor "#333333" ""
                 , ppSep = " "
-                , ppTitle   = xmobarColor "#ff6666"  "" . shorten 1000
+                , ppTitle   = xmobarColor "#222222"  "" . shorten 1000
                 , ppOrder   = \(ws:_:t:_)   -> [ws,t] }
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
