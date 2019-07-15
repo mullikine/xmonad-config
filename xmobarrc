@@ -21,9 +21,18 @@ Config {
     --bgColor = "#ff4400",
     --fgColor = "#669966",
 
-    -- nice red
-    bgColor = "#AA1133",
-    fgColor = "#ff6666",
+    -- -- nice red
+    -- bgColor = "#AA1133",
+    -- fgColor = "#ff6666",
+
+    -- -- terminal green
+    -- bgColor = "#001100",
+    -- fgColor = "#559955",
+
+    -- nice green
+    bgColor = "#0A2C0A",
+    fgColor = "#1C5C1C",
+
 
     -- -- very dark grey
     -- bgColor = "#111111",
@@ -57,19 +66,20 @@ Config {
         -- 444444
 
         -- Run Weather "CYVR" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000,
-        Run Com "uname" ["-s","-r"] "" 36000,
-        Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3> <bar4> <bar5> <bar6> <bar7>","-L","30","-H","60","-h","#ff6666","-l","#ff6666","-n","#ff6666","-w","3","-W","3"] 10,
-        -- Run Memory ["-t","memory <usedratio>","-H","8192","-L","4096","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        -- Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        -- Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        -- Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        Run Network "wlp3s0" ["-t","wifi down <rxbar> up <txbar>","-H","1000000","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
+        -- Run Com "ns-last-message" ["-s","-r"] "" 36000,
+        Run Com "ns-last-message" ["-s","-r"] "" 20,
+        Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3> <bar4> <bar5> <bar6> <bar7>","-L","30","-H","60","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-w","3","-W","3"] 10,
+        -- Run Memory ["-t","memory <usedratio>","-H","8192","-L","4096","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","9"] 10,
+        Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","9"] 10,
+        -- Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","9"] 10,
+        -- Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","9"] 10,
+        -- Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","9"] 10,
+        -- Run Network "wlp3s0" ["-t","wifi down <rxbar> up <txbar>","-H","1000000","-L","10","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","9"] 10,
         -- iphone USB doesn't get detected for some reason
-        --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
-        --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","9"] 10,
+        --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","9"] 10,
+        --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","9"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
-        Run Battery ["-t","<leftbar> <timeleft>","-h","#ff6666","-l","#ff6666","-n","#ff6666","-W","5"] 10,
+        Run Battery ["-t","<leftbar> <timeleft>","-h","#1C5C1C","-l","#1C5C1C","-n","#1C5C1C","-W","5"] 10,
         Run StdinReader
     ],
     --commands = [
@@ -87,7 +97,8 @@ Config {
     --],
     sepChar = "%",
     alignSep = "}{",
-    -- template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#ff6666>%date%</fc> "
-    template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %wlp3s0%  [%battery%]  <fc=#ff6666>%date%</fc> "
+    -- template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#1C5C1C>%date%</fc> "
+    template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  [%battery%]  <fc=#1C5C1C>%date%</fc> "
+    -- template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %wlp3s0%  [%battery%]  <fc=#1C5C1C>%date%</fc> "
     --template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  [%battery%]  <fc=#CEFFAC>%date%</fc>  %CYVR% "
 }
