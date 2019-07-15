@@ -342,13 +342,17 @@ myBar = "xmobar"
 -- ppCurrent ff9999
 -- ppTitle ff6666
 
--- dark grey
+-- very dark grey
 -- ppCurrent 333333
 -- ppTitle 222222
 
-myPP = xmobarPP { ppCurrent = xmobarColor "#333333" ""
+-- dark grey
+-- ppCurrent 444444
+-- ppTitle 333333
+
+myPP = xmobarPP { ppCurrent = xmobarColor "#ff9999" ""
                 , ppSep = " "
-                , ppTitle   = xmobarColor "#222222"  "" . shorten 1000
+                , ppTitle   = xmobarColor "#ff6666"  "" . shorten 1000
                 , ppOrder   = \(ws:_:t:_)   -> [ws,t] }
 toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
