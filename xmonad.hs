@@ -104,6 +104,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_g     ), spawn "win control-center")
     , ((modm .|. mod1Mask,  xK_g     ), spawn "killall import")
     , ((modm .|. shiftMask, xK_l     ), spawn "win calculator")
+    --, ((mod1Mask,  xK_F3    ), spawn "xterm")
     , ((0, xF86XK_Calculator), spawn "win calculator")
     , ((modm .|. controlMask, xK_a     ), spawn "win mixer")
     , ((modm .|. shiftMask .|. controlMask, xK_Return     ), spawn "win edit-clipboard")
