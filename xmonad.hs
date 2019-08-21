@@ -1,50 +1,50 @@
-import XMonad
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.Script
+import           XMonad
+import           XMonad.Hooks.DynamicLog
+import           XMonad.Hooks.Script
 
 -- both of these methods work
 -- EZConfig has a new section that lets me to chords
-import XMonad.Util.EZConfig
+import           XMonad.Util.EZConfig
 -- This lets me extend my current config the same way
 -- google: Graphics.X11.ExtraTypes.XF86
 -- https://hackage.haskell.org/package/X11-1.8/docs/Graphics-X11-ExtraTypes-XF86.html
-import Graphics.X11.ExtraTypes.XF86
+import           Graphics.X11.ExtraTypes.XF86
 ---- figure out why after mapping function keys, they stop working.
 --it might be because of xkb or xmodmap. I think it's a bug with xmonad
 --, ((modm, xK_F1     ), spawn "bri down") -- doesn't work
 --compile xmonad
 
-import Data.Monoid
-import System.Exit
-import XMonad.Actions.CopyWindow
-import XMonad.Actions.RotSlaves
-import XMonad.Actions.GridSelect
-import XMonad.Actions.FloatSnap
-import XMonad.Actions.CycleWS
-import XMonad.Hooks.FadeInactive
-import XMonad.Layout.Spacing
+import           Data.Monoid
+import           System.Exit
+import           XMonad.Actions.CopyWindow
+import           XMonad.Actions.CycleWS
+import           XMonad.Actions.FloatSnap
+import           XMonad.Actions.GridSelect
+import           XMonad.Actions.RotSlaves
+import           XMonad.Hooks.FadeInactive
+import           XMonad.Layout.Spacing
 -- gaps are for equal spacing between windows and around edge of
 -- screen https://randomlinuxstuff.wordpress.com/2014/03/06/xmonad-make-gaps-around-the-edge-of-the-screen-equal-to-the-gaps-between-windows/
-import XMonad.Layout.Gaps
+import           XMonad.Layout.Gaps
 -- equalspacing needs to be compiles externally, not worth doing
 --import XMonad.Layout.EqualSpacing
 --import XMonad.Layout.SimpleDecoration
-import XMonad.Util.Dmenu
-import XMonad.Actions.WindowBringer
-import XMonad.Actions.UpdatePointer
-import XMonad.Actions.SinkAll
-import Control.Monad
-import Control.Monad (liftM2)
-import qualified XMonad.StackSet as W
-import qualified Data.Map        as M
-import XMonad.Actions.GroupNavigation
-import XMonad.Actions.DynamicWorkspaces
+import           Control.Monad
+import           Control.Monad                    (liftM2)
+import qualified Data.Map                         as M
+import           XMonad.Actions.DynamicWorkspaces
+import           XMonad.Actions.GroupNavigation
+import           XMonad.Actions.SinkAll
+import           XMonad.Actions.UpdatePointer
+import           XMonad.Actions.WindowBringer
+import qualified XMonad.StackSet                  as W
+import           XMonad.Util.Dmenu
 --import XMonad.Layout.PerWorkspace
 
 -- this enables xm-sendcommand
-import XMonad.Hooks.ServerMode
-import XMonad.Actions.Commands
-import XMonad.Actions.WindowGo
+import           XMonad.Actions.Commands
+import           XMonad.Actions.WindowGo
+import           XMonad.Hooks.ServerMode
 
 --import XMonad hiding (|||)
 --import XMonad.Layout.LayoutCombinators
@@ -282,6 +282,7 @@ myManageHook = composeAll
     , title     =? "myst - Wine desktop"        --> doShift "6"
     , title     =? "outlaws - Wine desktop"     --> doShift "6"
     , title     =? "avernum6 - Wine desktop"    --> viewShift "6"
+    , title     =? "RA2 - Wine desktop"         --> viewShift "6"
     , title     =? "Red Shift"                  --> unfloat
     , title     =? "Trigger Editor"             --> doFloat
     , title     =? "Error"                      --> doFloat
