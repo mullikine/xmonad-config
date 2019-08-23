@@ -275,6 +275,7 @@ myManageHook = composeAll
     , title     =? "COMMANCHE - Wine desktop"   --> doFloat <+> viewShift "6"
     , title     =? "ONI - Wine desktop"         --> doShift "6"
     , className =? "Meld"                       --> viewShift "3"
+    , title     =? "Default - Wine desktop"        --> doShift "6"
     , title     =? "AOHD - Wine desktop"        --> doShift "6"
     , title     =? "AOC - Wine desktop"         --> doShift "6"
     , title     =? "AOE - Wine desktop"         --> doShift "6"
