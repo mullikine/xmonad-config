@@ -97,6 +97,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. mod1Mask,  xK_u     ), spawn "win xterm-tmux")
     , ((modm .|. mod1Mask .|. shiftMask, xK_u ), spawn "win xterm-tmux -h")
     , ((modm .|. shiftMask, xK_u     ), spawn "win vt100-tmux")
+    , ((modm .|. shiftMask, xK_p     ), spawn "win nv-vt100-tmux")
     , ((modm,               xK_i     ), spawn "win xterm-inv")
     , ((modm .|. shiftMask, xK_i     ), spawn "win vt100-inv")
     , ((modm .|. shiftMask, xK_m     ), spawn "win mail")
