@@ -1,0 +1,26 @@
+
+./xmonad.hs,736
+quitWithWarning quitWithWarning53,54
+myTerminal myTerminal59,60
+myFocusFollowsMouse myFocusFollowsMouse61,62
+myClickJustFocuses myClickJustFocuses64,65
+myBorderWidth myBorderWidth67,68
+myModMask myModMask68,69
+myNumlockMask myNumlockMask69,70
+myWorkspaces myWorkspaces70,71
+myNormalBorderColor myNormalBorderColor71,72
+myFocusedBorderColor myFocusedBorderColor72,73
+myKeys myKeys77,78
+myMouseBindings myMouseBindings192,193
+myLayout myLayout201,202
+myManageHook myManageHook225,226
+myEventHook myEventHook340,341
+myLogHook myLogHook342,343
+myStartupHook myStartupHook346,347
+main main348,349
+myBar myBar349,350
+myPP myPP366,367
+toggleStrutsKey toggleStrutsKey370,371
+defaults defaults374,375
+
+./xmonad.old.hs,0
