@@ -239,6 +239,7 @@ myManageHook = composeAll
     , className =? "Shane Mulligan"             --> doFloat
     , className =? "Gpick"                      --> doFloat
     , className =? "GParted"                    --> viewShift "3"
+    , className =? "VMware"                    --> doShift "3"
     , resource  =? "mednafen"                   --> unfloat <+> viewShift "6"
     , resource =? "Shane Mulligan"              --> doFloat
     , className =? "Google-chrome"              --> viewShift "2"
@@ -268,6 +269,7 @@ myManageHook = composeAll
     -- treat wine apps individually now
     --, className =? "Wine"                       --> viewShift "8"
     , className =? "Steam"                      --> doShift "3"
+    , className =? "Zenity"                      --> doShift "3"
     , className =? "TelegramDesktop"                      --> doShift "8"
     {- WM_CLASS(STRING) = "Telegram", "" -}
     , resource  =? "slack"                      --> doShift "3"
