@@ -309,6 +309,8 @@ myManageHook = composeAll
     -- COMMANCHE OR AOHD
     --, resource  =? "explorer.exe"               --> doShift "7"
     , resource  =? "Steam.exe"                  --> doShift "8"
+    , resource  =? "launcher.exe"                  --> doShift "8"
+    , resource  =? "aok hd.exe"                  --> doShift "8"
     , resource  =? "Code"                       --> doShift "3"
     , resource  =? "CDisplayEx.exe"             --> unfloat <+> viewShift "5"
     , resource  =? "Battle.net.exe"             --> viewShift "8"
