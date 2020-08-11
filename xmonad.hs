@@ -260,6 +260,7 @@ myManageHook = composeAll
     , resource =? "010Editor.exe"               --> viewShift "6"
     , resource =? "SmoothDraw4.exe"             --> doFloat
     , resource =? "Launcher.exe"                --> viewShift "6"
+    , resource =? "csgo_linux64"                --> viewShift "6"
     , resource =? "Shareaza.exe"                --> doShift "9"
     , resource =? "SC2.exe"                     --> viewShift "6"
     , resource =? "expleror.exe"                --> viewShift "8"
