@@ -21,9 +21,9 @@ Config {
     --bgColor = "#ff4400",
     --fgColor = "#669966",
 
-    -- nice red
-    bgColor = "#AA1133",
-    fgColor = "#ff6666",
+    -- -- nice red
+    -- bgColor = "#AA1133",
+    -- fgColor = "#ff6666",
 
     -- -- terminal green
     -- bgColor = "#001100",
@@ -40,9 +40,9 @@ Config {
     -- bgColor = "#111111",
     -- fgColor = "#222222",
 
-    -- -- dark grey
-    -- bgColor = "#111111",
-    -- fgColor = "#333333",
+    -- dark grey
+    bgColor = "#111111",
+    fgColor = "#333333",
 
     -- -- awful green
     -- bgColor = "#33AA11",
