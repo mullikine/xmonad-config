@@ -313,6 +313,7 @@ myManageHook = composeAll
     , resource  =? "launcher.exe"                  --> doShift "8"
     , resource  =? "aok hd.exe"                  --> doShift "8"
     , resource  =? "Code"                       --> doShift "3"
+    , resource  =? "discord"                       --> doShift "7"
     , resource  =? "CDisplayEx.exe"             --> unfloat <+> viewShift "5"
     , resource  =? "Battle.net.exe"             --> viewShift "8"
     , className =? "ePSXe - Enhanced PSX emulator" --> unfloat <+> doShift "6"
