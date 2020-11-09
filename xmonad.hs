@@ -271,7 +271,8 @@ myManageHook = composeAll
     --, resource =? "ChemDraw.exe"                --> viewShift "9"
     -- treat wine apps individually now
     --, className =? "Wine"                       --> viewShift "8"
-    , className =? "Steam"                      --> doShift "3"
+    , className =? "Steam"                      --> doShift "3" -- main application
+    , resource =? "Steam"                       --> doShift "3" -- initial startup window
     , className =? "Zenity"                      --> doShift "3"
     , className =? "TelegramDesktop"                      --> doShift "8"
     {- WM_CLASS(STRING) = "Telegram", "" -}
