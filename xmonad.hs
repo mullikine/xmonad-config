@@ -101,7 +101,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_i     ), spawn "win xterm-inv")
     , ((modm .|. shiftMask, xK_i     ), spawn "win vt100-inv")
     , ((modm .|. shiftMask, xK_m     ), spawn "win mail")
-    , ((modm .|. shiftMask, xK_m     ), spawn "megan")
+    , ((modm .|. shiftMask, xK_w     ), spawn "megan")
     , ((modm,               xK_slash ), spawn "win browser")
     , ((modm .|. shiftMask, xK_g     ), spawn "win control-center")
     , ((modm .|. mod1Mask,  xK_g     ), spawn "killall import")
