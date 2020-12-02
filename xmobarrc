@@ -104,7 +104,8 @@ Config {
     -- template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#444444>%date%</fc> "
     -- template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  [%battery%]  <fc=#444444>%date%</fc> "
     -- I feel like it's nicer with 2 spaces after date
-    template = " %StdinReader% }{  %ns-last-message% / %multicpu% / %memory%  <fc=#444444>%date%</fc>  "
+    -- template = " %StdinReader% }{  %ns-last-message% / %multicpu% / %memory%  <fc=#444444>%date%</fc>  "
+    template = " %StdinReader% }{  %ns-last-message%  %multicpu%  %memory%  <fc=#444444>%date%</fc>  "
     -- template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %wlp3s0%  [%battery%]  <fc=#444444>%date%</fc> "
     --template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  [%battery%]  <fc=#CEFFAC>%date%</fc>  %CYVR% "
 }
