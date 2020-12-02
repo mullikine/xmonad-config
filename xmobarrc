@@ -83,7 +83,7 @@ Config {
         --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
         --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
-        Run Battery ["-t","<leftbar> <timeleft>","-h","#444444","-l","#444444","-n","#444444","-W","5"] 10,
+        -- Run Battery ["-t","<leftbar> <timeleft>","-h","#444444","-l","#444444","-n","#444444","-W","5"] 10,
         Run StdinReader
     ],
     --commands = [
@@ -102,7 +102,8 @@ Config {
     sepChar = "%",
     alignSep = "}{",
     -- template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#444444>%date%</fc> "
-    template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  [%battery%]  <fc=#444444>%date%</fc> "
+    -- template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  [%battery%]  <fc=#444444>%date%</fc> "
+    template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  <fc=#444444>%date%</fc> "
     -- template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %wlp3s0%  [%battery%]  <fc=#444444>%date%</fc> "
     --template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  [%battery%]  <fc=#CEFFAC>%date%</fc>  %CYVR% "
 }
