@@ -74,7 +74,7 @@ Config {
         Run Com "ns-last-message" ["-s","-r"] "" 20,
         Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3> <bar4> <bar5> <bar6> <bar7>","-L","30","-H","60","-h","#444444","-l","#444444","-n","#444444","-w","3","-W","3"] 10,
         -- Run Memory ["-t","memory <usedratio>","-H","8192","-L","4096","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
-        Run Memory ["-t","memory <usedbar>","-H","8192","-L","4096","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
+        Run Memory ["-t","<usedbar>","-H","8192","-L","4096","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
         -- Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
         -- Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
         -- Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
@@ -103,7 +103,7 @@ Config {
     alignSep = "}{",
     -- template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#444444>%date%</fc> "
     -- template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  [%battery%]  <fc=#444444>%date%</fc> "
-    template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  <fc=#444444>%date%</fc> "
+    template = " %StdinReader% }{ / %ns-last-message% / %multicpu% / %memory% / <fc=#444444>%date%</fc> "
     -- template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %wlp3s0%  [%battery%]  <fc=#444444>%date%</fc> "
     --template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  [%battery%]  <fc=#CEFFAC>%date%</fc>  %CYVR% "
 }
