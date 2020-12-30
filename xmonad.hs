@@ -236,6 +236,7 @@ myManageHook = composeAll
     , className =? "epsxe_x64"                      --> unfloat <+> viewShift "6"
     , resource =? "PencilMainWindow"            --> viewShift "6"
     , resource =? "mupen64plus"                 --> unfloat <+> viewShift "6"
+    , resource =? "shareaza.exe"                 --> doShift "9"
     -- this is for raytracer. only runs under Xephyr and don't know why
     , className =? "Shane Mulligan"             --> doFloat
     , className =? "Gpick"                      --> doFloat
