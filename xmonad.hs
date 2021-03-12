@@ -239,6 +239,7 @@ myManageHook = composeAll
     , resource =? "shareaza.exe"                 --> doShift "9"
     -- this is for raytracer. only runs under Xephyr and don't know why
     , className =? "Shane Mulligan"             --> doFloat
+    , className =? "ImageMagick"             --> doFloat
     , className =? "Gpick"                      --> doFloat
     , className =? "GParted"                    --> viewShift "3"
     , className =? "VMware"                    --> doShift "3"
