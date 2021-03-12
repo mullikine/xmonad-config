@@ -239,7 +239,13 @@ myManageHook = composeAll
     , resource =? "shareaza.exe"                 --> doShift "9"
     -- this is for raytracer. only runs under Xephyr and don't know why
     , className =? "Shane Mulligan"             --> doFloat
+
+    -- For imagemagic, resource competes with className
+    , resource  =? "display"               --> unfloat
     , className =? "ImageMagick"             --> doFloat
+
+    -- I don't even want to use imagemagick
+
     , className =? "Gpick"                      --> doFloat
     , className =? "GParted"                    --> viewShift "3"
     , className =? "VMware"                    --> doShift "3"
@@ -325,7 +331,7 @@ myManageHook = composeAll
     , className =? "ePSXe - Enhanced PSX emulator" --> unfloat <+> doShift "6"
     , className =? "Eclipse"                    --> viewShift "9"
     , resource  =? "XMathematica"               --> doFloat <+> doShift "9"
-    , resource  =? "display"               --> unfloat
+
     , className =? "VirtualBox"                 --> doShift "3"
     , className =? "VirtualBox Manager"                 --> doShift "3"
     --, className =? "MPlayer"                    --> doFloat
