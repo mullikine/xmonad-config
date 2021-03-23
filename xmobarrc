@@ -48,9 +48,10 @@ Config {
     -- bgColor = "#33AA11",
     -- fgColor = "#66ff66",
 
-    --position = Static { xpos = 0, ypos = 0, width = 1920, height = 24 },
+    -- mele
+    position = Static { xpos = 0, ypos = 0, width = 1920, height = 24 },
     --macbook2015 13"
-    position = Static { xpos = 0, ypos = 0, width = 2560, height = 48 },
+    -- position = Static { xpos = 0, ypos = 0, width = 2560, height = 48 },
     --macbook2015 15"
     -- position = Static { xpos = 0, ypos = 0, width = 2880, height = 48 },
     -- position = Static { xpos = 0, ypos = 0, width = 1440, height = 48 },
