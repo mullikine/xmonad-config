@@ -49,7 +49,7 @@ Config {
     -- fgColor = "#66ff66",
 
     -- mele
-    position = Static { xpos = 0, ypos = 0, width = 1920, height = 24 },
+    position = Static { xpos = 0, ypos = 0, width = 1920, height = 48 },
     --macbook2015 13"
     -- position = Static { xpos = 0, ypos = 0, width = 2560, height = 48 },
     --macbook2015 15"
