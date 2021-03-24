@@ -239,7 +239,8 @@ myManageHook = composeAll
     , resource =? "shareaza.exe"                 --> doShift "9"
     -- this is for raytracer. only runs under Xephyr and don't know why
     , className =? "Shane Mulligan"             --> doFloat
-    , className =? "Age of Empires II: Definitive Edition"             --> unfloat <+> viewShift "6"
+    , className =? "Age of Empires II: Definitive Edition"             --> unfloat <+> doShift "6"
+    , resource =? "steam_app_813780"             --> unfloat <+> doShift "6"
 
     -- For imagemagic, resource competes with className
     , resource  =? "display"               --> unfloat
