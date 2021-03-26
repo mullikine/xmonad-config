@@ -358,6 +358,7 @@ myManageHook = composeAll
     unfloat = ask >>= doF . W.sink
 
 --myEventHook = mempty
+-- I guess serverModeEventHook is the default
 myEventHook = serverModeEventHook
 
 myLogHook :: X ()

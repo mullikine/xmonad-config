@@ -86,7 +86,7 @@ Config {
         --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
         --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
-        -- Run Battery ["-t","<leftbar> <timeleft>","-h","#444444","-l","#444444","-n","#444444","-W","5"] 10,
+        Run Battery ["-t","<leftbar> <timeleft>","-h","#444444","-l","#444444","-n","#444444","-W","5"] 10,
         Run StdinReader
     ],
     --commands = [
@@ -99,7 +99,7 @@ Config {
     --    --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#B6FF80","-l","#CEFFAC","-n","#FFFFCC","-W","9"] 10,
     --    --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#B6FF80","-l","#CEFFAC","-n","#FFFFCC","-W","9"] 10,
     --    Run Date "%a %b %_d %l:%M" "date" 10,
-    --    Run Battery ["-t","<leftbar> <timeleft>","-h","#CEFFAC","-l","#FF5050","-n","#FFFFCC","-W","5"] 10,
+    -- Run Battery ["-t","<leftbar> <timeleft>","-h","#CEFFAC","-l","#FF5050","-n","#FFFFCC","-W","5"] 10,
     --    Run StdinReader
     --],
     sepChar = "%",
