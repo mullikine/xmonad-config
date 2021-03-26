@@ -48,6 +48,8 @@ Config {
     -- bgColor = "#33AA11",
     -- fgColor = "#66ff66",
 
+    -- my monitor
+    -- position = Static { xpos = 0, ypos = 0, width = 2560, height = 48 },
     -- mele
     position = Static { xpos = 0, ypos = 0, width = 1920, height = 48 },
     --macbook2015 13"
@@ -107,7 +109,7 @@ Config {
     -- I feel like it's nicer with 2 spaces after date
     -- template = " %StdinReader% }{  %ns-last-message% / %multicpu% / %memory%  <fc=#444444>%date%</fc>  "
     -- template = " %StdinReader% }{  %ns-last-message%  %multicpu%  %memory%  <fc=#444444>%date%</fc>  "
-    template = " %StdinReader% }{  %ns-last-message%  <fc=#444444>%date%</fc>  "
+    template = " %StdinReader% }{  %ns-last-message%  [%battery%]  <fc=#444444>%date%</fc>  "
     -- template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %wlp3s0%  [%battery%]  <fc=#444444>%date%</fc> "
     --template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  [%battery%]  <fc=#CEFFAC>%date%</fc>  %CYVR% "
 }
