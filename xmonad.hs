@@ -359,6 +359,7 @@ myManageHook = composeAll
 
 --myEventHook = mempty
 -- I guess serverModeEventHook is the default
+-- xmonadctl 1
 myEventHook = serverModeEventHook
 
 myLogHook :: X ()
