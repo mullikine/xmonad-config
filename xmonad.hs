@@ -419,8 +419,8 @@ defaults = defaultConfig {
     -- without unbuffer, 'e' will go into an infinite loop
     [
      ("M4-M1-1", spawn "unbuffer spx")
-    ,("M4-M1-2", spawn "unbuffer pcx")
-    ,("M4-M1-3", spawn "unbuffer ogx")
+    -- ,("M4-M1-2", spawn "unbuffer pcx")
+    -- ,("M4-M1-3", spawn "unbuffer ogx")
     ,("M4-S-]", spawn "x11 rotate-right")
     ,("M4-S-[", spawn "x11 rotate-left")
     --("<XF86MonBrightnessDown>", spawn "bri down")
