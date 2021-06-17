@@ -42,7 +42,7 @@ Config {
 
     -- dark grey
     bgColor = "#111111",
-    fgColor = "#333333",
+    fgColor = "#252525",
 
     -- -- awful green
     -- bgColor = "#33AA11",
@@ -75,18 +75,18 @@ Config {
         -- Run Weather "CYVR" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000,
         -- Run Com "ns-last-message" ["-s","-r"] "" 36000,
         Run Com "ns-last-message" ["-s","-r"] "" 20,
-        Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3> <bar4> <bar5> <bar6> <bar7>","-L","30","-H","60","-h","#444444","-l","#444444","-n","#444444","-w","3","-W","3"] 10,
-        -- Run Memory ["-t","memory <usedratio>","-H","8192","-L","4096","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
-        Run Memory ["-t","<usedbar>","-H","8192","-L","4096","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
-        -- Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
-        -- Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
-        -- Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
-        -- Run Network "wlp3s0" ["-t","wifi down <rxbar> up <txbar>","-H","1000000","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
+        Run MultiCpu ["-t","<bar0> <bar1> <bar2> <bar3> <bar4> <bar5> <bar6> <bar7>","-L","30","-H","60","-h","#383838","-l","#404040","-n","#404040","-w","3","-W","3"] 10,
+        -- Run Memory ["-t","memory <usedratio>","-H","8192","-L","4096","-h","#383838","-l","#404040","-n","#404040","-W","9"] 10,
+        Run Memory ["-t","<usedbar>","-H","8192","-L","4096","-h","#383838","-l","#404040","-n","#404040","-W","9"] 10,
+        -- Run Network "eth0" ["-t","wired down <rxbar> up <txbar>","-H","1500","-L","10","-h","#383838","-l","#404040","-n","#404040","-W","9"] 10,
+        -- Run Network "eth1" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#383838","-l","#404040","-n","#404040","-W","9"] 10,
+        -- Run Network "wlan0" ["-t","wifi down <rxbar> up <txbar>","-H","1500","-L","10","-h","#383838","-l","#404040","-n","#404040","-W","9"] 10,
+        -- Run Network "wlp3s0" ["-t","wifi down <rxbar> up <txbar>","-H","1000000","-L","10","-h","#383838","-l","#404040","-n","#404040","-W","9"] 10,
         -- iphone USB doesn't get detected for some reason
-        --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
-        --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#444444","-l","#444444","-n","#444444","-W","9"] 10,
+        --Run Network "eth2" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#383838","-l","#404040","-n","#404040","-W","9"] 10,
+        --Run Network "lxcbr0" ["-t","usb down <rxbar> up <txbar>","-H","1500","-L","10","-h","#383838","-l","#404040","-n","#404040","-W","9"] 10,
         Run Date "%a %b %_d %l:%M" "date" 10,
-        Run Battery ["-t","<leftbar> <timeleft>","-h","#444444","-l","#444444","-n","#444444","-W","5"] 10,
+        Run Battery ["-t","<leftbar> <timeleft>","-h","#383838","-l","#404040","-n","#404040","-W","5"] 10,
         Run StdinReader
     ],
     --commands = [
@@ -104,12 +104,12 @@ Config {
     --],
     sepChar = "%",
     alignSep = "}{",
-    -- template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#444444>%date%</fc> "
-    -- template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  [%battery%]  <fc=#444444>%date%</fc> "
+    -- template = " %StdinReader% }{ %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  %battery%  <fc=#383838>%date%</fc> "
+    -- template = " %StdinReader% }{ {%ns-last-message%}  %multicpu%  %memory%  [%battery%]  <fc=#383838>%date%</fc> "
     -- I feel like it's nicer with 2 spaces after date
-    -- template = " %StdinReader% }{  %ns-last-message% / %multicpu% / %memory%  <fc=#444444>%date%</fc>  "
-    -- template = " %StdinReader% }{  %ns-last-message%  %multicpu%  %memory%  <fc=#444444>%date%</fc>  "
-    template = " %StdinReader% }{  %ns-last-message%  [%battery%]  <fc=#444444>%date%</fc>  "
-    -- template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %wlp3s0%  [%battery%]  <fc=#444444>%date%</fc> "
+    -- template = " %StdinReader% }{  %ns-last-message% / %multicpu% / %memory%  <fc=#383838>%date%</fc>  "
+    -- template = " %StdinReader% }{  %ns-last-message%  %multicpu%  %memory%  <fc=#383838>%date%</fc>  "
+    template = " %StdinReader% }{  %ns-last-message%  [%battery%]  <fc=#383838>%date%</fc>  "
+    -- template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %wlp3s0%  [%battery%]  <fc=#383838>%date%</fc> "
     --template = " %StdinReader% }{ %uname%  %multicpu%  %memory%  %eth0%  %eth1%  %wlp3s0%  [%battery%]  <fc=#CEFFAC>%date%</fc>  %CYVR% "
 }
