@@ -11,7 +11,7 @@ import           XMonad.Util.EZConfig
 import           Graphics.X11.ExtraTypes.XF86
 ---- figure out why after mapping function keys, they stop working.
 --it might be because of xkb or xmodmap. I think it's a bug with xmonad
---, ((modm, xK_F1     ), spawn "bri down") -- doesn't work
+--, ((modm, xK_oF1     ), spawn "bri down") -- doesn't work
 --compile xmonad
 
 import           Data.Monoid
@@ -100,6 +100,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_u     ), spawn "win vt100-tmux")
     , ((modm .|. shiftMask, xK_p     ), spawn "win nv-vt100-tmux")
     , ((modm,               xK_i     ), spawn "win inv")
+    -- , ((modm,               xK_o     ), spawn "win xterm-inv")
     {- , ((modm,               xK_i     ), spawn "win xterm-inv") -}
     , ((modm .|. shiftMask, xK_i     ), spawn "win vt100-inv")
     , ((modm .|. shiftMask, xK_m     ), spawn "win mail")
